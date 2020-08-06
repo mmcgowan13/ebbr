@@ -155,10 +155,9 @@ ebb_fit_prior_ <- function(tbl, x, n,
       gamlss.dist::BB(mu.link = x, sigma.link = y),
       list(x = mu_link, y = sigma_link)
     ))
-    message("My newer code is being used.")
     utils::capture.output(
       fit <- gamlss::gamlss(form, sigma.predictors = sigma_predictors,
-                            data = tbl, family = fam, control = gamlss::gamlss.control(autostep = FALSE))
+                            data = tbl, family = fam, ...)
     )
 
     parameters <- broom::tidy(fit)
