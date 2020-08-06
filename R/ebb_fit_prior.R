@@ -157,7 +157,7 @@ ebb_fit_prior_ <- function(tbl, x, n,
     ))
     utils::capture.output(
       fit <- gamlss::gamlss(form, sigma.predictors = sigma_predictors,
-                            data = tbl, family = fam, control = gamlss.control(autostep = FALSE), ...)
+                            data = tbl, family = fam, control = gamlss::gamlss.control(autostep = FALSE), ...)
     )
 
     parameters <- broom::tidy(fit)
